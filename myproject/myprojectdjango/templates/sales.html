@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Страница Каталог</title>
+  <style>
+    /* Стили для сетки карточек товаров или услуг */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    /* Стили для карточки товара или услуги */
+    .card {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    
+    /* Стили для цены товара или услуги */
+    .card-price {
+      font-weight: bold;
+    }
+    
+    /* Стили для картинки в каждой карточке */
+    .card-image {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+    
+    /* Стили для названия товара или услуги */
+    .card-title {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    /* Стили для краткого описания */
+    .card-description {
+      margin-top: 5px;
+      color: #888;
+    }
+    
+    /* Стили для кнопки "Заказать" */
+    .order-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .order-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Каталог товаров или услуг</h1>
+  
+  <div class="card-grid">
+    <div class="card">
+      <img class="card-image" src="#" alt="Товар 1">
+      <h2 class="card-title">Товар 1</h2>
+      <p class="card-description">Краткое описание товара 1</p>
+      <p class="card-price">Цена: $10</p>
+      <a class="order-button" href="#">Заказать</a>
+    </div>
+    
+    <div class="card">
+      <img class="card-image" src="#" alt="Товар 2">
+      <h2 class="card-title">Товар 2</h2>
+      <p class="card-description">Краткое описание товара 2</p>
+      <p class="card-price">Цена: $15</p>
+      <a class="order-button" href="#">Заказать</a>
+    </div>
+    
+    <div class="card">
+      <img class="card-image" src="#" alt="Товар 3">
+      <h2 class="card-title">Товар 3</h2>
+      <p class="card-description">Краткое описание товара 
+        <p class="card-price">Цена: $10</p>
+        <a class="order-button" href="#">Заказать</a>
+      </div>
+    </body>
+</html>
