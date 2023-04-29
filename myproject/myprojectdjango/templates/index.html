@@ -4,575 +4,122 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>demo</title>
+    <title>Криптомаркет - Главная</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+        #header {
+      background-color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    #header h1 {
+      color: #333;
+    }
+    
+    #content {
+      margin: 20px;
+    }
+    
+    #contact-form {
+      margin-top: 30px;
+    }
+    
+    .input-group {
+      margin-bottom: 10px;
+    }
+    
+    .input-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 5px;
+    }
+    
+    #cta-button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    #cta-button:hover {
+      background-color: #45a049;
+    }
+    
+    #news {
+      margin-top: 30px;
+    }
+    
+    .news-item {
+      margin-bottom: 20px;
+    }
+    
+    .news-item h2 {
+      margin-bottom: 5px;
+    }
+    
+    .news-item p {
+      margin-top: 0;
+    }
+     </style>
 </head>
   <body>
-    <header>
-    </header>
-    <div class="back">
-        <h1 class="zagalovok">Твой подход к&nbsp;путешествиям</h1>
+
         <div class="dropdown men-u">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Меню
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href='{% url "www" %}'>Вход</a></li>
-            <li><a class="dropdown-item"href= '{% url "qqq" %}' target="_blank">Акции</a></li>
-            <li><a class="dropdown-item" href="#past-one">Cлужба заботы</a></li>
+            <li><a class="dropdown-item"href= '{% url "qqq" %}' target="_blank">Каталог</a></li>
+            <li><a class="dropdown-item" href="#past-one">О нас</a></li>
           </ul>
         </div>
-    <div class="glav">
-    <ul class="menu">
-        <div class="munu-avio">
-        <input type="button" class="otkydaa" value="От куда" disabled>
-        <input type="button" class="kydaa" value="КУДА" disabled>
-        <input type="button" class="Datee" value="Дата туда" disabled>
-        <input type="button" class="Date11" value="Дата обратно" disabled>
-        <input type="button" class="Passengers1" value="Пассажиры" disabled>
-    </div>
-        <li id="otkyda"><input id="otkydaq" type="button" name="otkyda" value="ОТ КУДА"> 
-        <ul>
-            {% for q in kv %}
-            <li><input class="inp1"  type="button" name="Москва" onclick="text1()" value="{{q.name}}" ></li>
-            {% endfor %}
-        </ul>
-        </li>
-        </ul>
-    <ul class="menu">
-            <li id="kyda"><input id="kydaq" type="button" name="kyda" value=" КУДА">
-            <ul>
-                {% for q in kv %}
-            <li><input class="inp6"  type="button" name="Домодедово" onclick="textt1()" value="{{q.names}}" ></li>
-                {% endfor %}
-        </ul>
-        </li>
-        </ul>
-    <ul class="menu">
-            <li id="date"><input id="Date" type="button" name="date" value=" Дата туда">
-            <ul>
-            <li><input id="davaToday"  type="date" name="date" onclick="date()" ></li>
-            
-        </ul>
-        </li>
-        </ul>
-    <ul class="menu">
-            <li id="date1"><input id="Date1" type="button" name="date1" value=" Дата обратно">
-            <ul>
-            <li><input id="davaToday1"  type="date" name="date1" onclick="date1()" ></li>
-            
-        </ul>
-        </li>
-        </ul>
-    <ul class="menu">
-            <li id="Passengers"><input id="Passengers1" type="button" name="kyda" value=" Пассажиры">
-            <ul>
-                {% for q in kv %}
-            <li><input class="inp11"  type="button" name="Passengers" onclick="Passengers()" value="{{q.pas}}" ></li>
-                {% endfor %}
-        </ul>
-        </li>
-        </ul>
-        <div class="zakazati">
-            <button id="zakazat" ><a href="#">Заказать билет</a></button>
-        </div>
-</div>
-</div>
-</div>
-<div class="conteneer">
-    <section>
-        <p id="past-one">С&nbsp;заботой о&nbsp;ваших путешествиях</p>
-        <h2 id="past-two" >Мы&nbsp;всегда на&nbsp;связи</h2>
-        <p id="past-three" >Круглосуточная Служба заботы работает в 1 селе и&nbsp;помогает нашим пользователям на&nbsp;всех этапах оформления билета. Вы можете написать нам в&nbsp;чат или отправить запрос через форму</p>
-        <p id="past-four">Появился вопрос?</p>
-        <h2 id="past-fife">У нас есть готовые ответы</h2>
-        <p id="past-six">Ответы на самые популярные вопросы мы оставили ниже. Остальные ответы хранятся в нашей базе знаний.Если вы не нашли то, что вам нужно, напишите нам в на почту. Мы с радостью ответим на любой, даже самый сложный вопрос</p>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Как действовать если не прошла квитанция?
-            </button>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item" >Письмо с маршрутной квитанцией мы мгновенно отправляем на почту, указанную при оформлении. Если письма нет в<br> папке «Входящие», мы рекомендуем проверить папку «Спам». В случае, если и в ней письма не нашлось, то скачать<br> маршрутную квитанцию можно в разделе Документы по моим заказам, заполнив все необходимые строки формы.<br> Заходить в личный кабинет для этого не нужно.</li>
-            </ul>
-          </div>
-          <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Малым
-          </button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item" >Если на момент перелета ребенку уже будет 14 лет, то оформить билет необходимо, указав данные его паспорта.<br> Перелёт по свидетельству о рождении будет невозможен.</li>
-          </ul>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-             Почему мы?
-            </button>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item" >
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                      <div class="col">
-                        Не расстраивайтесь, если не успели найти подходящий<br> авиабилет на распродаже или у других операторов, <br>потому что у Купибилета найдутся<br> варианты на все четыре стороны.
-                      </div>
-                      <div class="col">
-                        При помощи формы поиска выбирайте дешёвые<br> билеты от известных мировых авиакомпаний.<br> Планируйте интересные маршруты, комбинируя<br> рейсы разных перевозчиков. Вы <br>можете купить дешёвые авиабилеты онлайн на<br> сайте Купибилет или в приложении.
-                      </div>
-                    </div>
-                  </div>
-              </li>
-            </ul>
-          </div>
-          <div class="container text-center">
-            тут будет самолетик
-            <div class="row align-items-start">
-              <div class="col">
-                <section id="sect1">
-                    <h5>Что-то типо тех-поддержки</h5>
-                    Эксклюзивные акции, лучшие лайфхаки, заботливые рекомендации от экспертов
-                    <input id="mail" type="mail" name="mail" value="qwert@gmail.com" disabled>
-                </section>
-              </div>
-              <div class="col">
-                <section id="sect2">
-                    <h5 id="reck">Здесь могла бы находиться ваша реклама</h5>
-                    
-                </section>
-              </div>
-            </div>
-          </div>
-    </section>
-    <div class="mains">
-      <div class="mains-img">
-        <img class="iconn" src="C:\Users\nikit\OneDrive\Рабочий стол\Avio\main/Без названия (1).svg">
-        <p>Подставляем данные пассажиров после<br> того, как вы их сохраните.<br> Оформляйте заказы удобно и без ошибок</p>
-      </div>
-      <div class="mains-img">
-        <img class="iconn-1" src="C:\Users\nikit\OneDrive\Рабочий стол\Avio\main/Без названия (2).svg">
-        <p>Создаём «умные» маршруты <br>из билетов разных авиакомпаний<br> по минимальным тарифам</p>
-      </div>
-      <div class="mains-img">
-        <img class="iconn-2" src="C:\Users\nikit\OneDrive\Рабочий стол\Avio\main/Без названия.svg">
-        <p>Отслеживаем цены на рейсы по<br> любимым направлениям. Узнавайте о<br> снижении и летайте дешевле</p>
-      </div>
-      <div class="mains-img">
-        <img class="iconn-3" src="C:\Users\nikit\OneDrive\Рабочий стол\Avio\main/Без названия (3).svg">
-        <p>Отслеживаем цены на рейсы<br> по любимым направлениям. Узнавайте о<br> снижении и летайте дешевле</p>
-      </div>
-    </div>
-</div>
-</div>
     <script src="{% static "js/main.js" %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <style>
-        
-.menu{
-    display: inline-block;
-}
-.menu li{
-    list-style: none;
-    position: relative;
-}
-.menu ul{
-    display: none;
-    padding: 0;
-}
-.menu li:hover ul{
-    display: block;
-}
-.inp1{
-    width: 100%; 
-}
-.inp2{
-    width: 100%; 
-}
-.inp3{
-    width: 100%; 
-}
-.inp4{
-    width: 100%; 
-}
-.inp5{
-    width: 100%; 
-}
-.inp6{
-    width: 100%; 
-}
-.inp7{
-    width: 100%; 
-}
-.inp8{
-    width: 100%; 
-}
-.inp9{
-    width: 100%; 
-}
-.inp10{
-    width: 100%; 
-}
-.inp11{
-    width: 100%; 
-}
-.inp12{
-    width: 100%; 
-}
-.inp13{
-    width: 100%; 
-}
-.inp14{
-    width: 100%; 
-}
-.inp15{
-    width: 100%; 
-}
-#otkyda{
-    margin-top: 1px;
-    position: absolute;
-    width: 145px;
-    margin-left: -100px;
-}
-#otkydaq{
-    width: 145px;
-}
-#kyda{
-    margin-top: 27.5px;
-    position: absolute;
-    margin-left: -619px;
-    width: 145px;
-}
-#kydaq{
-    width: 145px;
-}
-#date{
-    margin-top: 27.5px;
-    margin-left: -510px;
-    position: absolute;
-    width: 145px;
-}
-#Date{
-    width: 145px;
-}
-#date1{
-    margin-top: 27.5px;
-    margin-left: -400px;
-    position: absolute;
-    width: 145px;
-}
-#Date1{
-    width: 145px;
-}
-#Passengers{
-    margin-top: 27.5px;
-    margin-left: -291px;
-    position: absolute;
-    width: 145px;
-}
-#Passengers1{
-    width: 145px;
-}
-.glav{
-    margin-left: 15%;
-}
-.oiods{
-    height: 50px;
-    width: 100px;
-}
-.playapp{
-    text-align: center;
-}
-.src1{
-   margin-left: 20%;
-   margin-top:1%;
-  
-}
-#src1{
-    margin-left: 15%;
- }
- .src3{
-    margin-left: 72%;
-    margin-top: -50%;
- }
- #src3{
-     margin-left:65%;
-   
-}
-.src2{
-    margin-left: 20%;
-   margin-top: -50%;
- }
- #src2{
-    margin-left: 13%;
-   
-}
-.src5{
- margin-left: 32%;
- margin-top: -10%;
- height: 450px;
- width: 350px;
-}
-.back{
-    background: url({% static 'img/banner.png' %});
-    max-width: 2200px;
-    min-width: 1100px;
-    height: 450px;
-    position: relative;
-}
-header{
-    font-size: 150%;
-    z-index: 10;
-    max-width: 2200px;
-    min-width: 1910px;
-    background-color: rgba(197, 202, 202, 0.342);
-    display: flex;
-    gap: 1%;
-}
-.zagalovok{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 88px;
-    line-height: 96px;
-    display: flex;
-    max-width: 593px;
-    z-index: 1;
-    color: white;
-    margin-left: 10%;
-}
-.munu-avio{
-display: flex;
-font-size: 130%;
-gap: 1px;
-margin-top: 2%;
-}
-.otkydaa{
-    color: black;
-    background-color: white;
-    width: 145px;
-    margin-left: -100px;
-}
-.kydaa{
-    color: black;
-    background-color: white;
-    width: 145px;
-}
-.Datee{
-    color: black;
-    background-color: white;
-    width: 145px;
-}
-.Date11{
-    color: black;
-    background-color: white;
-    width: 145px;
-}
-.Passengers1{
-    color: black;
-    background-color: white;
-    width: 145px;
-}
-#zakazat{
-    margin-left: 670px;
-    margin-top: -35px;
-    border-radius: 12px;
-    flex: 1 1 28%;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    padding: 10px 16px;
-    max-height: 64px;
-    max-width: 208px;
-    font-size: 18px;
-    line-height: 28px;
-    background-color: rgb(75, 255, 126);
-    color: rgb(44, 57, 89);
-    box-shadow:rgb(44 57 89 / 80%) 10px 12px 30px; 
-}
-.conteneer{
-    padding: 10px;
-    max-width: 2200px;
-    min-width: 1100px;
-    height: 1200px;
-    position: relative;
-    background-color: rgba(157, 176, 230, 0.568);
-}
-section{
-background-color: rgba(208, 208, 214, 0.5);
-border-radius: 32px;
-width: 50%;
-height:90%;
-margin: 0 auto;
-}
-#past-one{
-    color: rgb(95, 96, 100);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    margin-left: 2%;
-    padding: 1%;
-}
-#past-two{
-    color: rgb(44, 57, 89);
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 64px;
-    margin-left: 2%;
-}
-#past-three{
-    color: rgb(98, 101, 127);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    margin-left: 2%;
-}
-#past-four{
-    color: rgb(157, 160, 174);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    margin-left: 2%;
-}
-#past-fife{
-    color: rgb(98, 101, 127);
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 48px;
-    margin-left: 2%;
-}
-#past-six{
-    color: rgb(98, 101, 127);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    margin-left: 2%;
-}
-.dropdown{
-    padding: 1px;
-    }
-.dropdown-item{
-    color: rgb(98, 101, 127);
-    padding: 1px;
-}
-.dropdown-menu{
-    width: 100%;
-    margin: 0 auto;
-}
-.btn-secondary{
-width: 100%;
-}
-#sect1{
-    background-color:rgba(134, 168, 241, 0.479);
-border-radius: 10px;
-width: 13%;
-height: 30%;
-margin-top: 1%;
-position: absolute;
-}
-#sect2{
-    background-color: rgba(134, 168, 241, 0.479);
-    border-radius: 10px;
-    width: 13%;
-    height: 30%;
-    margin-top: 1%;
-    position: absolute;
-    right: 26%;
-    text-align: center;
-}
-#mail{
-    width: 100%;
-    text-align: center;
-    left: 0;
-    position: absolute;
-   top:50%;
-}
-footer{
-    max-width: 2200px;
-    min-width: 1100px;
-    height: 250px;
-    position: relative;
-    background-color: rgb(110, 110, 110);
-    font-size: 17px;
-    font-weight: 500;
-    top: 10px;
-}
-#reck{
-    margin-top: 50%;
-}
-.icon{
-    padding: 2px;
-}
-
-#hhhh{
-    margin-top: 6%;
-    font-weight: 750;
-}
-#hhh{
-    font-weight: 750;
-}
-.styled__foot{
-    margin-left: 50%;
-}
-#footer-p{
-    text-align: center;
-}
-.nav-link{
-    margin-top: 30px;
-    text-align: center;
-    font-size: x-large;
-}
-.navbar-brand{
-    margin-left: 45%;
-}
-.mains{
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    background-color: rgba(157, 176, 230, 0.568);
-}
-.mains-img p{
-    text-align: center;
-}
-.mains-img img{
-margin-left: 120px;
-}
-.men-u{
-    width:150px ;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10;
-}
-    </style>
-  </body>
-  <footer>
-    <div class="container text-center">
-        <div class="row align-items-center">
-          <div class="col">
-            <h6 id="hhh">NoNAme</h6>
-                <p>Ваш проводник в мир ярких<br> путешествий и комфортных поездок</p>
-                <img class="icon" src="{% static "img/num4.svg" %}"><img class="icon" src="{% static "img/num5.svg" %}"><img class="icon" src="{% static "img/num6.svg" %}">
-          </div>
-          <div class="col">
-           <h6 id="hhhh">Помощь</h6>
-           <p>База знаний</p>
-           <p>Где мой билет</p>
-           <p>Блог</p>
-          </div>
-          <div class="col">
-            <h6 id="hhhh"> Компания</h6>
-            <p>Главное о нас</p>
-            <p>Контакты</p>
-            <p>Пресс-центр</p>
-          </div>
-          <div class="col">
-            <h6 id="hhhh"> Информация</h6>
-            <p>Акции и распродажи</p>
-            <p>Безопасность</p>
-            <p>Конфидециальность</p>
-          </div>
-        </div>
-      </div>
-      <p id="footer-p">
-        ©  2011–2023 Купибилет
-        Дешёвые авиабилеты, бронирование и онлайн-заказ</p>
-  </footer>
+  <header id="header">
+    <h1>Добро пожаловать в Криптомаркет!</h1>
+    <p>Мы предлагаем широкий ассортимент криптовалют и услуг для успешной инвестиции и торговли.</p>
+  </header>
+  <div id="content">
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <p>Криптомаркет предлагает следующие услуги:</p>
+      <ul>
+        <li>Покупка и продажа криптовалют</li>
+        <li>Криптовалютные кошельки</li>
+        <li>Торговля на криптобиржах</li>
+        <li>Консультации и аналитика рынка</li>
+      </ul>
+    </section>
+    <section id="contact">
+  <h2>Свяжитесь с нами</h2>
+  <p>Для получения дополнительной информации или оформления заказа, заполните форму ниже:</p>
+  <form id="contact-form" action="/submit-form" method="post">
+    <div class="input-group">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="input-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="input-group"></div>
+</body>
 </html>

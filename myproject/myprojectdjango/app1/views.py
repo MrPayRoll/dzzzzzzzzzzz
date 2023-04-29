@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.contrib.auth.forms import AuthenticationForm
 
 def index_page(request):
     qwerty = Otkyda.objects.all()

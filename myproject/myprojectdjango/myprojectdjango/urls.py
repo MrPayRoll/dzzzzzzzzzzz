@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page),
     path('sales.heml', about,name='qqq'),
-    path('vhod.heml', vhod,name='www')
+    path('vhod.heml', vhod,name='www'),
 ]
